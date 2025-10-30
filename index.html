@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversário da Sayuri</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="invitation-card">
+            <div class="header">
+                <h1>🎉 Você está convidado! 🎉</h1>
+            </div>
+            
+            <div class="content">
+                <h2>Aniversário da Sayuri</h2>
+                
+                <div class="details">
+                    <div class="detail-item">
+                        <span class="icon">📅</span>
+                        <div>
+                            <strong>Data:</strong>
+                            <p>08/11/2025</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <span class="icon">🕐</span>
+                        <div>
+                            <strong>Horário:</strong>
+                            <p>20:00 horas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <strong>Local:</strong>
+                            <p>Av. Ville Roy, 1744 - Caçari, Boa Vista - RR, 69307-725</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message">
+                    <p>Será uma alegria contar com sua presença neste dia especial!</p>
+                </div>
+
+                <div class="confirmation-section">
+                    <h3>Confirme sua presença</h3>
+                    
+                    <form id="confirmationForm">
+                        <div class="form-group">
+                            <label for="name">Nome completo:</label>
+                            <input type="text" id="name" name="name" required placeholder="Digite seu nome">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp:</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(00) 00000-0000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guests">Número de acompanhantes:</label>
+                            <input type="number" id="guests" name="guests" min="0" max="10" value="0">
+                        </div>
+                        
+                        <button type="submit" class="btn-confirm">
+                            Confirmar Presença ✓
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

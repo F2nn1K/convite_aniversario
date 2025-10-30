@@ -1,0 +1,21 @@
+{
+  "name": "convite-aniversario-sayuri",
+  "version": "1.0.0",
+  "description": "Sistema de convite com confirmação de presença e WhatsApp automático",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "keywords": [
+    "convite",
+    "aniversario",
+    "whatsapp",
+    "twilio"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "twilio": "^4.19.0"
+  }
+}
+
