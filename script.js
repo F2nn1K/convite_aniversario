@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.textContent = 'Enviando...';
 
         try {
-            // 1. Salvar no Supabase
-            const supabaseResponse = await fetch(`${SUPABASE_URL}/rest/v1/confirmacoes`, {
+            // Salvar no Supabase
+            const response = await fetch(`${SUPABASE_URL}/rest/v1/confirmacoes`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -55,36 +55,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
             });
 
-            if (!supabaseResponse.ok) {
-                throw new Error('Erro ao salvar confirmação');
+            if (!response.ok) {
+                throw new Error('Erro ao salvar');
             }
 
-            // 2. Enviar WhatsApp via Netlify Function
-            submitButton.textContent = 'Enviando WhatsApp...';
-            
-            try {
-                const whatsappResponse = await fetch('/.netlify/functions/send-whatsapp', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        nome: name,
-                        whatsapp: whatsapp
-                    })
-                });
-
-                const whatsappResult = await whatsappResponse.json();
-                console.log('Resultado WhatsApp:', whatsappResult);
-            } catch (whatsappError) {
-                console.error('Erro ao enviar WhatsApp (não crítico):', whatsappError);
-                // Continua mesmo se WhatsApp falhar
-            }
-
-            // 3. Mostrar SweetAlert com a imagem
+            // Mostrar SweetAlert com a imagem
             await Swal.fire({
                 title: 'Presença confirmada!',
-                html: 'Obrigado!<br>Enviamos os detalhes da festa no seu WhatsApp! 📱🎊',
+                text: 'Obrigado! Nos vemos na festa! 🎊',
                 imageUrl: 'public/say.jpg',
                 imageWidth: 400,
                 imageHeight: 400,
